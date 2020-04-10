@@ -35,5 +35,6 @@ python generate.py
 <br/>
 
 ## References
-- [Sentence Compression Dataset](https://github.com/google-research-datasets/sentence-compression)
-- [fairseq](https://github.com/pytorch/fairseq)
+- [**Sentence Compression Dataset**](https://github.com/google-research-datasets/sentence-compression)
+- [**fairseq**](https://github.com/pytorch/fairseq)
+- [**fairseq** *train* script](https://github.com/kakaobrain/helo_word/blob/master/gec/track.py#L91)
