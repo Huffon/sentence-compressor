@@ -3,7 +3,7 @@ import argparse
 
 
 def train(config):
-    model_config = f"--arch transformer " \
+    model_config = f"--arch transformer --share-all-embeddings " \
                  f"--optimizer adam --lr {config.lr} --label-smoothing 0.1 --dropout {config.dropout} " \
                  f"--max-tokens 4000 --min-lr '1e-09' --lr-scheduler inverse_sqrt " \
                  f"--weight-decay 0.0001 --criterion label_smoothed_cross_entropy " \
@@ -18,9 +18,7 @@ if __name__ == "__main__":
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--dropout', type=float, default=0.1)
     parser.add_argument('--max_epoch', type=int, default=10)
-
     parser.add_argument('--data_path', type=str, default='data-bin/')
     parser.add_argument('--ckpt_dir', type=str, default='ckpt/')
-    
     args = parser.parse_args()
     train(args)

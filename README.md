@@ -6,7 +6,7 @@ This repository contains Sentence Compressor API trained using Transformer archi
 
 ## Requirements
 
-- Pyhon >= 3.7
+- Python >= 3.7
 - fairseq >= 0.9.0
 
 <br/>

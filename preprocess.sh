@@ -1,4 +1,5 @@
 python preprocess.py
 
 fairseq-preprocess --source-lang src --target-lang tgt \
-    --trainpref data/train --validpref data/eval --destdir data-bin
+    --trainpref data/train --validpref data/eval --destdir data-bin \
+    --joined-dictionary
