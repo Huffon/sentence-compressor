@@ -21,11 +21,15 @@ pip install fairseq
 <br/>
 
 ## Usage
+
 - To **download** and **preprocess** dataset, run following command:
 
 ```bash
 bash preprocess.sh
 ```
+
+- **Transformer**'s best loss: **3.118**
+- **BART**'s best loss: **3.013**
 
 ### (1) Transformer
 - To train **Transformer** using pre-processed dataset, run following command:
@@ -67,19 +71,19 @@ python generate_bart.py
 ```
 [Transformer]
 
-Country music is itself a commercial offshoot of the traditional song and instrumental music of the South, formerly carried on in an oral tradition.
->> Country music is itself a commercial offshoot of the song.
+At ten years old, Bart is the eldest child and only son of Homer and Marge, and the brother of Lisa and Maggie.
+>> Bart is and only son of Homer and Marge.
 
-General division has the most number of reviews, and Initmates division has the least number of reviews.
->> General division has the number of reviews.
+In casting, Nancy Cartwright originally planned to audition for the role of Lisa, while Yeardley Smith tried out for Bart.
+>> Nancywright originally planned to audition.
 
 [BART]
 
-Country music is itself a commercial offshoot of the traditional song and instrumental music of the South, formerly carried on in an oral tradition.
->> Country music is itself a commercial offshoot of the traditional song.
+At ten years old, Bart is the eldest child and only son of Homer and Marge, and the brother of Lisa and Maggie.
+>> At ten years old, Bart is the child and son of Homer.
 
-General division has the most number of reviews, and Initmates division has the least number of reviews.
->> General division has the most number of reviews has the least number.
+In casting, Nancy Cartwright originally planned to audition for the role of Lisa, while Yeardley Smith tried out for Bart.
+>> , Nancy Cartwright planned to audition for the role of Lisa.
 ```
 
 <br/>

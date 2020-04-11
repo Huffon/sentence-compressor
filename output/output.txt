@@ -1,36 +1,71 @@
-2020-04-11 12:16:28 | INFO | fairseq_cli.interactive | Namespace(all_gather_list_size=16384, beam=4, bpe='gpt2', buffer_size=1, checkpoint_suffix='', cpu=False, criterion='cross_entropy', data='ckpt', dataset_impl=None, decoding_format=None, diverse_beam_groups=-1, diverse_beam_strength=0.5, diversity_rate=-1.0, empty_cache_freq=0, eval_bleu=False, eval_bleu_args=None, eval_bleu_detok='space', eval_bleu_detok_args=None, eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, gen_subset='test', gpt2_encoder_json='https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json', gpt2_vocab_bpe='https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe', input='output/input.txt', iter_decode_eos_penalty=0.0, iter_decode_force_max_iter=False, iter_decode_max_iter=10, iter_decode_with_beam=1, iter_decode_with_external_reranker=False, left_pad_source='True', left_pad_target='False', lenpen=2.0, load_alignments=False, log_format=None, log_interval=100, lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_len_a=0, max_len_b=200, max_sentences=1, max_source_positions=1024, max_target_positions=1024, max_tokens=None, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, model_overrides='{}', model_parallel_size=1, momentum=0.99, nbest=1, no_beamable_mm=False, no_early_stop=False, no_progress_bar=False, no_repeat_ngram_size=2, num_shards=1, num_workers=1, optimizer='nag', path='ckpt/checkpoint_best.pt', prefix_size=0, print_alignment=True, print_step=False, quiet=False, remove_bpe=None, replace_unk=None, required_batch_size_multiple=8, results_path=None, retain_iter_history=False, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, score_reference=False, seed=1, shard_id=0, skip_invalid_size_inputs_valid_test=False, source_lang='source', target_lang='target', task='translation', temperature=0.9, tensorboard_logdir='', threshold_loss_scale=None, tokenizer=None, truncate_source=False, unkpen=0, unnormalized=False, upsample_primary=1, user_dir=None, warmup_updates=0, weight_decay=0.0)
-2020-04-11 12:16:28 | INFO | fairseq.tasks.translation | [source] dictionary: 50264 types
-2020-04-11 12:16:28 | INFO | fairseq.tasks.translation | [target] dictionary: 50264 types
-2020-04-11 12:16:28 | INFO | fairseq_cli.interactive | loading model(s) from ckpt/checkpoint_best.pt
-2020-04-11 12:16:34 | INFO | fairseq_cli.interactive | NOTE: hypothesis and token scores are output in base 2
-2020-04-11 12:16:34 | INFO | fairseq_cli.interactive | Type the input sentence and press return:
-S-0	464 18895 3812 39974 389 11800 475 45420 11 329 465 2292 290 465 7176 329 12148 389 1994 276 284 2854 286 10741 11 4568 11 290 772 14479 543 787 262 12017 4388 13
-H-0	-0.09328696921690849	464 18895 3812 389 11800 475 45420 329 465 2292 13
-D-0	-0.09328696921690849	The pressures toward are subtle but irresistible for his position.
-P-0	-0.0847 -0.0308 -0.1641 -0.1840 -4.3727 -0.1079 -6.4639 -1.4106 -0.0236 -0.0035 -0.5587 -0.0289
-A-0	0-0 1-1 2-2 3-3 5-4 7-5 7-6 7-7 10-8 11-9 12-10
-S-1	464 1688 13460 286 1499 2647 389 670 11 4925 11 290 44984 11 12655 287 6702 530 12 19412 400 286 477 5849 1160 28224 13
-H-1	-0.04229866271464683	464 1688 13460 286 1499 2647 2647 389 670 11 4925 13
-D-1	-0.04229866271464683	The major themes of country music music are work, freedom.
-P-1	-0.0595 -0.0913 -2.3927 -0.1486 -0.0610 -0.3441 -1.5863 -0.3126 -0.0011 -1.6109 -0.0256 -0.4906 -0.0242
-A-1	0-0 1-1 2-2 3-3 2-4 5-5 5-6 7-7 7-8 9-9 9-10 9-11
-S-2	33921 2647 318 2346 257 5068 572 30408 286 262 4569 3496 290 21543 2647 286 262 2520 11 15734 5281 319 287 281 12886 6761 13
-H-2	-0.01628953697502544	33921 2647 318 2346 257 5068 572 30408 286 262 4569 3496 13
-D-2	-0.01628953697502544	Country music is itself a commercial offshoot of the traditional song.
-P-2	-0.4302 -0.0033 -0.0512 -0.0156 -0.0393 -0.0055 -0.2173 -0.3083 -0.1440 -0.0077 -1.5551 -0.0122 -0.3766 -0.0264
-A-2	0-0 1-1 1-2 3-3 4-4 5-5 6-6 7-7 11-8 9-9 10-10 11-11 12-12
-S-3	34 40819 1473 11 422 262 923 1499 2647 373 281 46644 5022 11 543 3017 6156 3517 2613 5643 11 1605 1143 6300 286 777 11 13626 7259 11 949 301 2411 31796 11 1903 25570 11 290 7259 286 867 10524 19233 422 262 5068 2968 2647 2831 625 262 812 13
-H-3	-0.12132570924586798	464 923 2647 373 281 5022 5022 11 340 373 262 1363 13
-D-3	-0.12132570924586798	The start music was an mix mix, it was the home.
-P-3	-6.0718 -0.0053 -0.2317 -0.0081 -0.0127 -3.2588 -0.1613 -3.3795 -2.9233 -0.5765 -0.4506 -4.9335 -1.7419 -0.0249
-A-3	0-0 6-1 7-2 8-3 10-4 11-5 12-6 12-7 19-8 22-9 36-10 30-11 32-12
-S-4	5886 262 1160 400 4289 340 468 7334 422 257 49847 290 44018 2647 11 16621 1762 12 4871 5369 11 656 257 5068 2647 11 4635 416 1854 284 5198 284 257 1762 12 4871 5369 11 1771 393 407 663 22054 389 1682 1762 1398 13
-H-4	-0.048316268487613515	5886 262 1160 400 4289 340 468 7334 422 257 49847 13
-D-4	-0.048316268487613515	Over the 20th century it has grown from a homegrown.
-P-4	-0.1676 -0.1940 -0.1045 -0.0027 -0.0510 -1.8651 -0.0240 -0.0022 -0.0959 -0.0221 -5.0913 -0.5211 -0.0241
-A-4	0-0 1-1 2-2 3-3 4-4 5-5 7-6 7-7 8-8 10-9 10-10 11-11
-S-5	464 18975 3616 286 1499 2647 355 262 6875 4004 2647 286 968 4492 12 27317 11 6727 12 4871 1992 4502 5511 851 17728 683 355 257 564 250 16338 1605 447 251 851 318 40016 29033 13
-H-5	-0.049703781519111936	464 18975 286 1499 2647 355 262 6875 4004 2647 286 968 4492 12 6727 1992 5511 13
-D-5	-0.049703781519111936	The symbolic of country music as the declared favorite music of New England- upper President Bush.
-P-5	-0.1255 -2.0550 -0.7324 -2.5304 -0.0648 -3.6608 -1.0550 -0.4289 -0.1596 -0.4825 -2.6908 -0.0887 -0.1513 -0.0349 -0.9044 -1.2418 -0.4950 -1.0114 -0.0300
-A-5	0-0 1-1 2-2 2-3 5-4 5-5 8-6 8-7 9-8 10-9 10-10 12-11 15-12 15-13 17-14 22-15 22-16 23-17
+2020-04-11 13:48:36 | INFO | fairseq_cli.interactive | Namespace(all_gather_list_size=16384, beam=4, bpe='gpt2', buffer_size=1, checkpoint_suffix='', cpu=False, criterion='cross_entropy', data='ckpt', dataset_impl=None, decoding_format=None, diverse_beam_groups=-1, diverse_beam_strength=0.5, diversity_rate=-1.0, empty_cache_freq=0, eval_bleu=False, eval_bleu_args=None, eval_bleu_detok='space', eval_bleu_detok_args=None, eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, gen_subset='test', gpt2_encoder_json='https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json', gpt2_vocab_bpe='https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe', input='output/input.txt', iter_decode_eos_penalty=0.0, iter_decode_force_max_iter=False, iter_decode_max_iter=10, iter_decode_with_beam=1, iter_decode_with_external_reranker=False, left_pad_source='True', left_pad_target='False', lenpen=2.0, load_alignments=False, log_format=None, log_interval=100, lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_len_a=0, max_len_b=200, max_sentences=1, max_source_positions=1024, max_target_positions=1024, max_tokens=None, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, model_overrides='{}', model_parallel_size=1, momentum=0.99, nbest=1, no_beamable_mm=False, no_early_stop=False, no_progress_bar=False, no_repeat_ngram_size=2, num_shards=1, num_workers=1, optimizer='nag', path='ckpt/checkpoint_best.pt', prefix_size=0, print_alignment=True, print_step=False, quiet=False, remove_bpe=None, replace_unk=None, required_batch_size_multiple=8, results_path=None, retain_iter_history=False, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, score_reference=False, seed=1, shard_id=0, skip_invalid_size_inputs_valid_test=False, source_lang='source', target_lang='target', task='translation', temperature=0.9, tensorboard_logdir='', threshold_loss_scale=None, tokenizer=None, truncate_source=False, unkpen=0, unnormalized=False, upsample_primary=1, user_dir=None, warmup_updates=0, weight_decay=0.0)
+2020-04-11 13:48:36 | INFO | fairseq.tasks.translation | [source] dictionary: 50264 types
+2020-04-11 13:48:36 | INFO | fairseq.tasks.translation | [target] dictionary: 50264 types
+2020-04-11 13:48:36 | INFO | fairseq_cli.interactive | loading model(s) from ckpt/checkpoint_best.pt
+2020-04-11 13:48:40 | INFO | fairseq_cli.interactive | NOTE: hypothesis and token scores are output in base 2
+2020-04-11 13:48:40 | INFO | fairseq_cli.interactive | Type the input sentence and press return:
+S-0	10374 400 349 28030 5302 9908 20531 318 257 19812 2095 287 262 1605 15108 5581 2168 383 34376 290 636 286 262 20531 1641 13
+H-0	-0.08372337946556078	9908 5302 9908 9908 20531 318 257 19812 2095 13
+D-0	-0.08372337946556078	Jo JoJoJo Simpson is a fictional character.
+P-0	-0.0011 -8.7718 -0.0035 -0.0341 -0.4928 -0.0379 -0.0644 -0.0754 -0.0038 -0.6270 -0.0186
+A-0	4-0 5-1 5-2 5-3 6-4 7-5 8-6 9-7 10-8 11-9
+S-1	1544 318 21346 416 18496 13690 29995 290 717 4120 319 5581 287 383 833 25415 471 297 805 5438 1790 366 10248 5265 1 319 3035 678 11 12923 13
+H-1	-0.016896340137389984	1544 318 21346 416 18496 13690 29995 290 717 4120 13
+D-1	-0.016896340137389984	He is voiced by Nancy Cartwright and first appeared.
+P-1	-0.1498 -0.0435 -0.0000 -0.0574 -0.0014 -0.0021 -0.0068 -1.1049 -0.0028 -0.0055 -1.0400 -0.0187
+A-1	0-0 1-1 2-2 3-3 4-4 5-5 6-6 9-7 8-8 9-9 11-10
+S-2	42921 3101 550 587 1444 284 7078 257 2168 286 22078 1912 319 465 9048 10283 11 5155 287 5783 11 475 2427 3066 284 2251 257 649 900 286 3435 13
+H-2	-0.01618141497582559	42921 3101 550 587 1444 284 7078 257 2168 286 22078 13
+D-2	-0.01618141497582559	Groening had been called to pitch a series of shorts.
+P-2	-0.4987 -0.0023 -0.0117 -0.0282 -0.0108 -0.0578 -0.0050 -0.0420 -0.0049 -0.0575 -1.9460 -0.0515 -0.0183
+A-2	0-0 1-1 2-2 3-3 4-4 5-5 6-6 7-7 8-8 11-9 10-10 11-11
+S-3	3633 262 1334 286 262 3435 547 3706 706 10299 3101 338 1641 1866 11 13167 338 1438 318 281 281 6713 286 262 1573 865 265 13
+H-3	-0.023048770903331888	33 433 318 281 6713 286 262 1573 865 265 13
+D-3	-0.023048770903331888	Bart is anagram of the word brat.
+P-3	-0.2088 -1.6390 -0.9569 -0.0637 -0.0006 -0.2639 -0.0336 -0.0796 -0.0154 -0.0021 -0.0384 -0.0169
+A-3	15-0 15-1 15-2 19-3 21-4 22-5 23-6 24-7 25-8 26-9 26-10
+S-4	3260 12655 319 383 833 25415 471 297 805 5438 329 1115 812 11 262 20531 1641 2722 663 898 2168 319 5426 11 543 26376 3426 1596 11 11104 13
+H-4	-0.024316296476335385	464 1641 2722 663 898 2168 319 5426 13
+D-4	-0.024316296476335385	The family received its own series on Fox.
+P-4	-0.1097 -0.6472 -0.0087 -0.0290 -0.8190 -0.0112 -0.6584 -0.0043 -0.1262 -0.0180
+A-4	25-0 29-1 17-2 18-3 19-4 20-5 21-6 22-7 25-8
+S-5	2953 3478 812 1468 11 13167 318 262 34331 1200 290 691 3367 286 28440 290 337 1376 11 290 262 3956 286 15378 290 33014 13
+H-5	-0.03156432525261083	33 433 318 290 691 3367 286 28440 290 337 1376 13
+D-5	-0.03156432525261083	Bart is and only son of Homer and Marge.
+P-5	-0.0828 -0.2972 -0.0551 -2.8523 -0.9487 -0.0032 -0.5265 -0.2116 -0.1656 -0.0091 -0.0008 -0.1651 -0.0162
+A-5	5-0 5-1 6-2 7-3 14-4 12-5 13-6 14-7 17-8 16-9 17-10 18-11
+S-6	33 433 338 749 9208 290 2968 2095 12796 389 465 2984 3043 31222 1108 11 43860 1108 290 23797 329 4934 13
+H-6	-0.025224708838192743	33 433 338 749 9208 389 465 3043 1108 13
+D-6	-0.025224708838192743	Bart's most prominent are hischieness.
+P-6	-0.0179 -0.0077 -0.0714 -0.0358 -0.0032 -0.7468 -0.0392 -0.7974 -0.8757 -0.4380 -0.0192
+A-6	0-0 1-1 2-2 3-3 4-4 7-5 10-6 12-7 11-8 13-9
+S-7	1544 468 4120 287 584 2056 11270 284 383 34376 784 1390 2008 1830 11 383 34376 15875 11 383 34376 21640 11 30503 11 290 9048 3835 784 290 7867 281 2104 1627 286 20813 13
+H-7	-0.033126352304614456	1544 468 4120 287 584 2056 13
+D-7	-0.033126352304614456	He has appeared in other media.
+P-7	-0.0115 -0.0373 -0.0117 -0.3842 -0.0725 -0.0040 -1.5797 -0.0191
+A-7	0-0 1-1 2-2 6-3 4-4 5-5 6-6
+S-8	818 13092 11 18496 13690 29995 6198 6027 284 31678 329 262 2597 286 15378 11 981 11609 446 1636 4176 3088 503 329 13167 13
+H-8	-0.01990781144219062	45 3883 29995 6198 6027 284 31678 13
+D-8	-0.01990781144219062	Nancywright originally planned to audition.
+P-8	-0.0026 -0.0081 -0.0180 -0.0388 -0.0021 -0.0924 -0.0012 -1.4318 -0.0176
+A-8	3-0 3-1 4-2 6-3 7-4 9-5 9-6 10-7
+S-9	34194 14306 286 262 2095 2291 465 30860 3526 308 3775 287 262 4756 8379 26 465 33401 3848 284 46488 26 290 465 4929 746 81 1386 366 47659 616 22078 1600 366 126 94 42012 11 1097 31842 40754 366 3987 470 423 257 9875 11 582 40754 290 366 40 1101 13167 20531 13 5338 262 5968 389 345 43634
+H-9	-0.04910131554422384	34194 14306 286 262 2095 2291 465 308 3775 13
+D-9	-0.04910131554422384	Hallmarks of the character include his gags.
+P-9	-0.0120 -0.0004 -0.4736 -0.0461 -0.0065 -0.0012 -0.0324 -4.4433 -0.0003 -0.9087 -0.0169
+A-9	0-0 1-1 5-2 3-3 4-4 5-5 6-6 7-7 10-8 15-9
+S-10	7191 262 717 734 7028 286 383 34376 11 13167 373 262 905 338 31661 2095 290 366 33 433 45733 1 38597 11 38896 13167 20531 12 26966 20813 48120 465 43860 9408 290 11293 379 739 620 30749 11 543 4073 867 3397 290 30770 284 3350 683 355 257 2089 2597 2746 329 1751 13
+H-10	-0.023429846836438995	464 34376 11 13167 373 262 905 338 31661 2095 13
+D-10	-0.023429846836438995	The Simpsons, Bart was the show's breakout character.
+P-10	-2.0036 -0.2961 -0.1616 -0.0119 -0.0179 -0.3020 -0.0637 -0.0577 -0.0827 -0.0138 -0.3442 -0.0188
+A-10	9-0 7-1 9-2 9-3 10-4 11-5 12-6 14-7 14-8 15-9 16-10
+S-11	24472 262 2368 1622 11 262 2168 2067 284 2962 517 319 262 1641 355 257 2187 11 996 13167 991 3793 257 9208 2095 13 3862 3706 13167 530 286 262 1802 749 1593 661 286 262 1160 400 4289 11 290 339 373 3706 366 298 1425 263 286 262 614 1 287 6303 416 11058 18168 13
+H-11	-0.029461111794004673	24472 262 2368 1622 11 262 2168 2067 284 2962 517 13
+D-11	-0.029461111794004673	Around the third season, the series started to focus more.
+P-11	-0.0178 -0.0618 -0.1031 -0.0028 -1.2494 -0.2508 -0.0156 -0.0081 -0.5709 -0.0014 -0.9836 -1.6949 -0.0188
+A-11	0-0 1-1 2-2 3-3 21-4 18-5 6-6 7-7 8-8 9-9 10-10 11-11
+S-12	45 3883 13690 29995 468 1839 1811 13304 329 47640 13167 11 1390 257 11460 8079 33953 11289 287 9768 290 281 25860 11289 287 8735 13
+H-12	-0.006815385592005925	45 3883 13690 29995 468 1839 13304 329 47640 13167 13
+D-12	-0.006815385592005925	Nancy Cartwright has won awards for voicing Bart.
+P-12	-0.0080 -0.0025 -0.0002 -0.0090 -0.0330 -0.0238 -0.0551 -0.4738 -0.0204 -0.0286 -0.3087 -0.0182
+A-12	0-0 1-1 2-2 3-3 4-4 5-5 9-6 9-7 9-8 10-9 16-10
