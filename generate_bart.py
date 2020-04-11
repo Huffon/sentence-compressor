@@ -4,7 +4,7 @@ from fairseq.models.bart import BARTModel
 
 
 def main():
-    bart = BARTModel.from_pretrained('checkpoints', checkpoint_file='checkpoint_best.pt')
+    bart = BARTModel.from_pretrained('ckpt_bart', checkpoint_file='checkpoint_best.pt')
     bart.cuda()
     bart.half()
     bart.eval()

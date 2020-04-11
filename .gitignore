@@ -6,3 +6,4 @@ data-bin/
 model
 checkpoints
 dict.txt
+*.out

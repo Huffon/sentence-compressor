@@ -42,15 +42,17 @@ python train_transformer.py
 
 ```
 wget MODEL
-tag xvzf tran.tar.gz
+tag xvzf transformer.tar.gz
 python generate_transformer.py
 ```
 
 ### (2) BART
 
-- To fine-tune pre-trained **BART**, run following command:
+- To download and fine-tune pre-trained **BART**, run following command:
 
 ```bash
+wget https://dl.fbaipublicfiles.com/fairseq/models/bart.large.tar.gz
+tar xvzf bart.large.tar.gz
 bash train_bart.sh
 ```
 
