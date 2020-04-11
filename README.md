@@ -1,13 +1,15 @@
 # Sentence Compressor using Transformer
 
-This repository contains Sentence Compressor API trained using Transformer architecture.
+This repository contains Sentence Compressor API trained using Transformer and BART architecture
+
+Lots of code are borrowed from [fairseq](https://github.com/pytorch/fairseq) library
 
 <br/>
 
 ## Requirements
 
 - Python version >= 3.7
-- PyTorch version >= 1.4.0
+- [PyTorch](https://pytorch.org/get-started/locally/) version >= 1.4.0
 - [fairseq](https://github.com/pytorch/fairseq) >= 0.9.0
 
 ```bash
@@ -19,26 +21,20 @@ pip install fairseq
 <br/>
 
 ## Usage
-- To preprocess dataset, run following command:
+- To **download** and **preprocess** dataset, run following command:
 
 ```bash
 bash preprocess.sh
 ```
 
-- To train Transformer using preprocessed dataset, run following command:
+### (1) Transformer
+- To train **Transformer** using pre-processed dataset, run following command:
 
 ```bash
 python train_transformer.py
 ```
 
-- To fine-tune pre-trained BART, run following command:
-
-```
-bash
-bash train_bart.sh
-```
-
-- To generate example sentence using [pre-trained Transformer](), run following command:
+- To **generate** example sentence using [pre-trained Transformer](), run following command:
 
 ```
 wget MODEL
@@ -46,12 +42,44 @@ tag xvzf MODEL
 python generate_transformer.py
 ```
 
-- To generate example sentence using [fine-tuned BART](), run following command:
+### (2) BART
+
+- To fine-tune pre-trained **BART**, run following command:
+
+```bash
+bash train_bart.sh
+```
+
+- To **generate** example sentence using [fine-tuned BART](), run following command:
 
 ```
 wget MODEL
 tag xvzf MODEL
 python generate_bart.py
+```
+
+<br/>
+
+## Example
+
+- To test your own sentences, fill `input.txt` with your sentences
+
+```
+[Transformer]
+
+Country music is itself a commercial offshoot of the traditional song and instrumental music of the South, formerly carried on in an oral tradition.
+>> Country music is itself a commercial offshoot of the song.
+
+General division has the most number of reviews, and Initmates division has the least number of reviews.
+>> General division has the number of reviews.
+
+[BART]
+
+Country music is itself a commercial offshoot of the traditional song and instrumental music of the South, formerly carried on in an oral tradition.
+>> 
+
+General division has the most number of reviews, and Initmates division has the least number of reviews.
+>>
 ```
 
 <br/>

@@ -3,5 +3,6 @@ ckpt/
 data-bin/
 *.json
 *.bpe
-*.txt
 model
+checkpoints
+dict.txt

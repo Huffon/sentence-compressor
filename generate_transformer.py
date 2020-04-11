@@ -4,8 +4,8 @@ import argparse
 
 
 def generate(config):
-    gen_prompt = f"fairseq-interactive {config.data_path} --path {config.ckpt} --input test.txt " \
-                 f"--beam {config.beam} --print-alignment > result.txt " \
+    gen_prompt = f"fairseq-interactive {config.data_path} --path {config.ckpt} --input output/input.txt " \
+                 f"--beam {config.beam} --print-alignment > output/output.txt " \
                  f"--temperature 0.9 --bpe gpt2"
     os.system(gen_prompt)
 
