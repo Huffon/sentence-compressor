@@ -103,5 +103,5 @@ Target length
 ## References
 - [**Sentence Compression Dataset**](https://github.com/google-research-datasets/sentence-compression)
 - [**fairseq**](https://github.com/pytorch/fairseq)
-- [fairseq __*train*__ script](https://github.com/kakaobrain/helo_word/blob/master/gec/track.py#L91)
+- [fairseq Transformer __*train*__ script](https://github.com/kakaobrain/helo_word/blob/master/gec/track.py#L91)
 - [Pre-trained **BART**](https://github.com/pytorch/fairseq/tree/master/examples/bart)

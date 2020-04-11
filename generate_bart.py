@@ -1,30 +1,25 @@
+"""Generation using BART"""
+import torch
 from fairseq.models.bart import BARTModel
 
 
 def main():
-    bart = BARTModel.from_pretrained('/checkpoints', checkpoint_file='model.pt')
+    bart = BARTModel.from_pretrained('checkpoints', checkpoint_file='checkpoint1.pt')
+    bart.cuda()
+    bart.half()
     bart.eval()
 
-    with open('test.source') as source, open('test.hypo', 'w') as fout:
-        sline = source.readline().strip()
-        slines = [sline]
-        for sline in source:
-            if count % bsz == 0:
-                with torch.no_grad():
-                    hypotheses_batch = bart.sample(slines, beam=4, lenpen=2.0, max_len_b=140, min_len=55, no_repeat_ngram_size=3)
-
-                for hypothesis in hypotheses_batch:
-                    fout.write(hypothesis + '\n')
-                    fout.flush()
-                slines = []
-
-            slines.append(sline.strip())
-            count += 1
-        if slines != []:
-            hypotheses_batch = bart.sample(slines, beam=4, lenpen=2.0, max_len_b=140, min_len=55, no_repeat_ngram_size=3)
-            for hypothesis in hypotheses_batch:
-                fout.write(hypothesis + '\n')
-                fout.flush()
+    with open('output/input.txt') as source:
+        lines = source.readlines()
+        print("[Before]")
+        for i, line in enumerate(lines):
+            print(f"({i+1}): {line}")
+        
+        with torch.no_grad():
+            preds = bart.sample(lines, beam=4, lenpen=2.0, max_len_b=60, min_len=10, no_repeat_ngram_size=3)
+            print("[After]")
+            for i, pred in enumerate(preds):
+                print(f"({i+1}): {pred}")
 
 
 if __name__ == "__main__":

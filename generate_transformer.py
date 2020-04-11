@@ -1,4 +1,4 @@
-"Generation script"
+"""Generation using Transformer"""
 import os
 import argparse
 

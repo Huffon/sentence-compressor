@@ -1,4 +1,4 @@
-"Training script"
+"Train Transformer"
 import os
 import argparse
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--dropout', type=float, default=0.1)
-    parser.add_argument('--max_epoch', type=int, default=10)
+    parser.add_argument('--max_epoch', type=int, default=5)
     parser.add_argument('--data_path', type=str, default='data-bin')
     parser.add_argument('--ckpt', type=str, default='ckpt')
     args = parser.parse_args()
