@@ -38,7 +38,7 @@ python train_transformer.py
 
 ```
 wget MODEL
-tag xvzf MODEL
+tag xvzf tran.tar.gz
 python generate_transformer.py
 ```
 
@@ -54,7 +54,7 @@ bash train_bart.sh
 
 ```
 wget MODEL
-tag xvzf MODEL
+tag xvzf bart.tar.gz
 python generate_bart.py
 ```
 
