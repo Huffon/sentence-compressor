@@ -76,10 +76,10 @@ General division has the most number of reviews, and Initmates division has the 
 [BART]
 
 Country music is itself a commercial offshoot of the traditional song and instrumental music of the South, formerly carried on in an oral tradition.
->> 
+>> Country music is itself a commercial offshoot of the traditional song.
 
 General division has the most number of reviews, and Initmates division has the least number of reviews.
->>
+>> General division has the most number of reviews has the least number.
 ```
 
 <br/>

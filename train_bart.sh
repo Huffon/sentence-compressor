@@ -5,7 +5,7 @@ MAX_TOKENS=4000
 UPDATE_FREQ=1
 BART_PATH=/model/bart.large/model.pt
 
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python train.py data-bin \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python utils/train.py data-bin \
     --restore-file $BART_PATH \
     --max-tokens $MAX_TOKENS \
     --task translation \

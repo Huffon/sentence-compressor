@@ -1,4 +1,4 @@
-python preprocess.py
+python utils/preprocess.py
 
 wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json'
 wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe'
