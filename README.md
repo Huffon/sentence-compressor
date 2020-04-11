@@ -1,6 +1,6 @@
 # Sentence Compressor using Transformer
 
-This repository contains Sentence Compressor API trained using Transformer and BART architecture
+This repository contains Sentence Compressor API trained using **Transformer** and **BART** architecture
 
 Lots of code are borrowed from [fairseq](https://github.com/pytorch/fairseq) library
 
@@ -8,7 +8,7 @@ Lots of code are borrowed from [fairseq](https://github.com/pytorch/fairseq) lib
 
 ## Requirements
 
-- Python version >= 3.7
+- **Python** version >= 3.7
 - [PyTorch](https://pytorch.org/get-started/locally/) version >= 1.4.0
 - [fairseq](https://github.com/pytorch/fairseq) >= 0.9.0
 
@@ -62,7 +62,7 @@ python generate_bart.py
 
 ## Example
 
-- To test your own sentences, fill `input.txt` with your sentences
+- To test your own sentences, fill [**input.txt**](output/input.txt) with your sentences
 
 ```
 [Transformer]
@@ -80,6 +80,22 @@ Country music is itself a commercial offshoot of the traditional song and instru
 
 General division has the most number of reviews, and Initmates division has the least number of reviews.
 >>
+```
+
+<br/>
+
+## Data statistics
+
+```
+Source length
+    Max: 4770 
+    Min: 23 
+    Avg: 153
+
+Target length
+    Max: 236
+    Min: 6
+    Avg: 56
 ```
 
 <br/>
