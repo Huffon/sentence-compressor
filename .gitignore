@@ -1,9 +1,9 @@
 data/
 ckpt/
+ckpt_bart/
 data-bin/
 *.json
 *.bpe
 model
-checkpoints
 dict.txt
 *.out
