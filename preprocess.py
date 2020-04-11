@@ -60,7 +60,7 @@ def main():
 
     prefix = "data/comp-data.eval"
     nums = [""]
-    src, tgt = preprocess("eval", prefix, nums)
+    src, tgt = preprocess("val", prefix, nums)
     create_pair("eval", src, tgt)
 
 
