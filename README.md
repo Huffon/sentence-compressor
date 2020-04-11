@@ -1,4 +1,4 @@
-# Sentence Compressor using Transformer
+# Sentence Compressor
 
 This repository contains Sentence Compressor API trained using **Transformer** and **BART** architecture
 
