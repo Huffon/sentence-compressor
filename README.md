@@ -97,18 +97,19 @@ In casting, Nancy Cartwright originally planned to audition for the role of Lisa
 Source length
     Max: 4770 
     Min: 4 
-    Avg: 152
+    Avg: 180
 
 Target length
     Max: 477
     Min: 2
-    Avg: 57
+    Avg: 52
 ```
 
 <br/>
 
 ## References
 - [**Sentence Compression Dataset**](https://github.com/google-research-datasets/sentence-compression)
+- [Gigaword Dataset](https://www.tensorflow.org/datasets/catalog/gigaword)
 - [**fairseq**](https://github.com/pytorch/fairseq)
 - [fairseq Transformer __*train*__ script](https://github.com/kakaobrain/helo_word/blob/master/gec/track.py#L91)
 - [Pre-trained **BART**](https://github.com/pytorch/fairseq/tree/master/examples/bart)

@@ -152,6 +152,7 @@ def main():
     giga_src, giga_tgt = giga_train
     src += giga_src
     tgt += giga_tgt
+    logging.info(f"Current dataset size: {len(src)}")
     create_pair("train", src, tgt)
 
     logging.info("[VAL] Google Dataset")
