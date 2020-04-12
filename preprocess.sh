@@ -1,12 +1,15 @@
+# Google
 git clone https://github.com/google-research-datasets/sentence-compression.git
 mv sentence-compression/data data
 
+# Edinburgh
 wget https://www.jamesclarke.net/media/data/broadcastnews-compressions.tar.gz
 tar xvzf broadcastnews-compressions.tar.gz 
 
 wget https://www.jamesclarke.net/media/data/written-compressions.tar.gz
 tar xvzf written-compressions.tar.gz
 
+# MSR
 wget https://download.microsoft.com/download/C/C/A/CCA10A93-4372-44CB-A2A3-B433ADB27276/Release.zip
 mkdir Release
 unzip Release.zip -d Release

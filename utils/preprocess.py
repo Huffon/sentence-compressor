@@ -1,9 +1,13 @@
 """Data pre-processing function"""
 import os
+import random
 import logging
 from typing import List
 
 import pandas as pd
+import tensorflow_datasets as tfds
+
+random.seed(42)
 
 
 def preprocess_google(mode: str, prefix: str, nums: List[str]):
@@ -85,16 +89,46 @@ def preprocess_msr(source: List[str], target: List[str]):
     return source, target
 
 
+def preprocess_gigaword():
+    """Preprocess Gigaword parallel sentence compression dataset
+    """
+    train_src, train_tgt = list(), list()
+    dataset = tfds.load("gigaword", split="train", shuffle_files=True)
+
+    for pair in tfds.as_numpy(dataset):
+        train_src.append(pair["document"].decode("utf-8"))
+        train_tgt.append(pair["summary"].decode("utf-8"))
+
+    valid_src, valid_tgt = list(), list()
+    dataset = tfds.load("gigaword", split="validation", shuffle_files=True)
+    
+    for pair in tfds.as_numpy(dataset):
+        valid_src.append(pair["document"].decode("utf-8"))
+        valid_tgt.append(pair["summary"].decode("utf-8"))
+
+    dataset = tfds.load("gigaword", split="test", shuffle_files=True)
+    
+    for pair in tfds.as_numpy(dataset):
+        valid_src.append(pair["document"].decode("utf-8"))
+        valid_tgt.append(pair["summary"].decode("utf-8"))
+
+    return (train_src, train_tgt), (valid_src, valid_tgt)
+
+
 def create_pair(mode: str, src: List[str], tgt: List[str]):
     """Create source and target file using pre-generated list
     """
+    pair = list(zip(src, tgt))
+    random.shuffle(pair)
+    src, tgt = zip(*pair)
+
     with open(f"data/{mode}.source", "w", encoding="utf-8") as f_src:
-        for source in src:
+        for source in list(src):
             f_src.write(source)
             f_src.write("\n")
 
     with open(f"data/{mode}.target", "w", encoding="utf-8") as f_tgt:
-        for target in tgt:
+        for target in list(tgt):
             f_tgt.write(target)
             f_tgt.write("\n")
 
@@ -112,12 +146,21 @@ def main():
 
     logging.info("[TRAIN] MSR Dataset")
     src, tgt = preprocess_msr(src, tgt)
+
+    logging.info("[TRAIN] Gigaword Dataset")
+    giga_train, giga_val = preprocess_gigaword()
+    giga_src, giga_tgt = giga_train
+    src += giga_src
+    tgt += giga_tgt
     create_pair("train", src, tgt)
 
-    logging.info("[EVAL] Google Dataset")
+    logging.info("[VAL] Google Dataset")
     prefix = "data/comp-data.eval"
     nums = [""]
     src, tgt = preprocess_google("val", prefix, nums)
+    giga_src, giga_tgt = giga_val
+    src += giga_src
+    tgt += giga_tgt
     create_pair("val", src, tgt)
 
 

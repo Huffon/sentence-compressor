@@ -13,9 +13,10 @@ Lots of code are borrowed from [fairseq](https://github.com/pytorch/fairseq) lib
 - [fairseq](https://github.com/pytorch/fairseq) >= 0.9.0
 
 ```bash
-conda create -n compression python=3.7
+conda create -n compressor python=3.7
+conda activate compressor
 conda install pytorch cudatoolkit=10.1 -c pytorch
-pip install fairseq
+pip install fairseq pandas tensorflow-datasets
 ```
 
 <br/>
@@ -29,7 +30,7 @@ bash preprocess.sh
 ```
 
 - **Transformer**'s best loss: **3.118**
-- **BART**'s best loss: **3.013**
+- **BART**'s best loss: **2.838**
 
 ### (1) Transformer
 - To train **Transformer** using pre-processed dataset, run following command:
@@ -95,13 +96,13 @@ In casting, Nancy Cartwright originally planned to audition for the role of Lisa
 ```
 Source length
     Max: 4770 
-    Min: 23 
-    Avg: 153
+    Min: 4 
+    Avg: 152
 
 Target length
-    Max: 236
-    Min: 6
-    Avg: 56
+    Max: 477
+    Min: 2
+    Avg: 57
 ```
 
 <br/>
