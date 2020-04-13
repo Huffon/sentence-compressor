@@ -1,5 +1,5 @@
 data/
-ckpt/
+ckpt_transformer/
 ckpt_bart/
 data-bin/
 *.json

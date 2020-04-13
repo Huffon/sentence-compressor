@@ -13,8 +13,8 @@ def generate(config):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', type=str, default='ckpt')
-    parser.add_argument('--ckpt', type=str, default='ckpt/checkpoint_best.pt')
+    parser.add_argument('--data_path', type=str, default='ckpt_transformer')
+    parser.add_argument('--ckpt', type=str, default='ckpt_transformer/checkpoint_best.pt')
     parser.add_argument('--beam', type=int, default=4)
     args = parser.parse_args()
     generate(args)

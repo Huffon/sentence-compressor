@@ -21,6 +21,6 @@ if __name__ == "__main__":
     parser.add_argument('--dropout', type=float, default=0.1)
     parser.add_argument('--max_epoch', type=int, default=10)
     parser.add_argument('--data_path', type=str, default='data-bin')
-    parser.add_argument('--ckpt', type=str, default='ckpt')
+    parser.add_argument('--ckpt', type=str, default='ckpt_transformer')
     args = parser.parse_args()
     train(args)
