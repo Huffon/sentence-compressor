@@ -19,7 +19,7 @@ rm broadcastnews-compressions.tar.gz written-compressions.tar.gz Release.zip
 mkdir data
 python utils/preprocess.py
 
-rm -rf annotator1 annotator2 annotator3 written Release
+rm -rf annotator1 annotator2 annotator3 written Release sentence-compression
 
 wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json'
 wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe'

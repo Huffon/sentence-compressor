@@ -1,6 +1,6 @@
 # Sentence Compressor
 
-This repository contains Sentence Compressor API trained using **Transformer** and **BART** architecture
+This repository contains **Sentence Compressor** API trained using **Transformer** and **BART** architecture
 
 Lots of code are borrowed from [fairseq](https://github.com/pytorch/fairseq) library
 
@@ -29,9 +29,6 @@ pip install fairseq requests pandas tensorflow-datasets
 bash preprocess.sh
 ```
 
-- **Transformer**'s best loss: **3.118**
-- **BART**'s best loss: **2.838**
-
 ### (1) Transformer
 - To train **Transformer** using pre-processed dataset, run following command:
 
@@ -39,17 +36,15 @@ bash preprocess.sh
 python train_transformer.py
 ```
 
-- To **generate** example sentence using [pre-trained Transformer](), run following command:
+- To **generate** example sentence using pre-trained **Transformer**, run following command:
 
 ```
-wget MODEL
-tag xvzf transformer.tar.gz
 python generate_transformer.py
 ```
 
 ### (2) BART
 
-- To download and fine-tune pre-trained **BART**, run following command:
+- To **download** and **fine-tune** pre-trained **BART**, run following command:
 
 ```bash
 wget https://dl.fbaipublicfiles.com/fairseq/models/bart.large.tar.gz
@@ -57,11 +52,9 @@ tar xvzf bart.large.tar.gz
 bash train_bart.sh
 ```
 
-- To **generate** example sentence using [fine-tuned BART](), run following command:
+- To **generate** example sentence using fine-tuned **BART**,, run following command:
 
 ```
-wget MODEL
-tag xvzf bart.tar.gz
 python generate_bart.py
 ```
 
@@ -69,7 +62,7 @@ python generate_bart.py
 
 ## Example
 
-- To test your own sentences, fill [**input.txt**](output/input.txt) with your sentences
+- To **test** your own sentences, fill [**input.txt**](output/input.txt) with your sentences
 
 ```
 [Transformer]
@@ -109,7 +102,7 @@ Target length
 
 ## References
 - [**Sentence Compression Dataset**](https://github.com/google-research-datasets/sentence-compression)
-- [Gigaword Dataset](https://www.tensorflow.org/datasets/catalog/gigaword)
+- [Pre-trained **BART**](https://github.com/pytorch/fairseq/tree/master/examples/bart)
 - [**fairseq**](https://github.com/pytorch/fairseq)
 - [fairseq Transformer __*train*__ script](https://github.com/kakaobrain/helo_word/blob/master/gec/track.py#L91)
-- [Pre-trained **BART**](https://github.com/pytorch/fairseq/tree/master/examples/bart)
+- [Gigaword Dataset](https://www.tensorflow.org/datasets/catalog/gigaword) (Opt.)
