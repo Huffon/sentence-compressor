@@ -16,7 +16,7 @@ Lots of code are borrowed from [fairseq](https://github.com/pytorch/fairseq) lib
 conda create -n compressor python=3.7
 conda activate compressor
 conda install pytorch cudatoolkit=10.1 -c pytorch
-pip install fairseq pandas tensorflow-datasets
+pip install fairseq requests pandas tensorflow-datasets
 ```
 
 <br/>
