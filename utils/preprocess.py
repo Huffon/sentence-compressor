@@ -147,11 +147,11 @@ def main():
     logging.info("[TRAIN] MSR Dataset")
     src, tgt = preprocess_msr(src, tgt)
 
-    logging.info("[TRAIN] Gigaword Dataset")
-    giga_train, giga_val = preprocess_gigaword()
-    giga_src, giga_tgt = giga_train
-    src += giga_src
-    tgt += giga_tgt
+    # logging.info("[TRAIN] Gigaword Dataset")
+    # giga_train, giga_val = preprocess_gigaword()
+    # giga_src, giga_tgt = giga_train
+    # src += giga_src
+    # tgt += giga_tgt
     logging.info(f"Current dataset size: {len(src)}")
     create_pair("train", src, tgt)
 
@@ -159,9 +159,9 @@ def main():
     prefix = "data/comp-data.eval"
     nums = [""]
     src, tgt = preprocess_google("val", prefix, nums)
-    giga_src, giga_tgt = giga_val
-    src += giga_src
-    tgt += giga_tgt
+    # giga_src, giga_tgt = giga_val
+    # src += giga_src
+    # tgt += giga_tgt
     create_pair("val", src, tgt)
 
 
