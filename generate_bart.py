@@ -4,14 +4,13 @@ from fairseq.models.bart import BARTModel
 
 
 def main():
-    bart = BARTModel.from_pretrained('ckpt_bart', checkpoint_file='checkpoint_best.pt')
+    bart = BARTModel.from_pretrained('ckpt_bart', checkpoint_file='checkpoint_1_2000.pt')
     bart.cuda()
     bart.half()
     bart.eval()
 
     with open('output/input.txt') as source:
-        lines = source.readlines()
-        lines = [line.replace("\n", "") for line in lines]
+        lines = [line.replace("\n", "") for line in source.readlines()]
 
         print("[Before]")
         for i, line in enumerate(lines):
