@@ -42,6 +42,10 @@ python train_transformer.py
 python generate_transformer.py
 ```
 
+*cf. I think **Transformer** is not big enough to be trained on large datasets like Gigaword (4M). It is recommended to train Transformer only for extract-based datasets.*
+
+<br/>
+
 ### (2) BART
 
 - To **download** and **fine-tune** pre-trained **BART**, run following command:
@@ -65,21 +69,29 @@ python generate_bart.py
 - To **test** your own sentences, fill [**input.txt**](output/input.txt) with your sentences
 
 ```
-[Transformer]
+# BART (fine-tuned 2000 steps)
+
+[Before & After]
+Bartholomew JoJo Simpson is a fictional character in the American animated television series The Simpsons and part of the Simpson family.
+>> Bartholomew JoJo Simpson is a fictional character in the animated television series The Simpsons.
+
+While the rest of the characters were named after Groening's family members, Bart's name is an anagram of the word brat.
+>> Bart's name is an anagram of the word brat.
 
 At ten years old, Bart is the eldest child and only son of Homer and Marge, and the brother of Lisa and Maggie.
->> Bart is and only son of Homer and Marge.
+>> At ten years old, Bart is the eldest child and son of Homer and Marge.
+
+Bart's most prominent and popular character traits are his mischievousness, rebelliousness and disrespect for authority.
+>> Bart 's character traits are his mischievousness, rebelliousness and disrespect.
 
 In casting, Nancy Cartwright originally planned to audition for the role of Lisa, while Yeardley Smith tried out for Bart.
->> Nancywright originally planned to audition.
+>> Nancy Cartwright planned to audition for the role of Lisa.
 
-[BART]
+Hallmarks of the character include his chalkboard gags in the opening sequence; his prank calls to Moe; and his catchphrases "Eat my shorts", "¡Ay, caramba!", "Don't have a cow, man!", and "I'm Bart Simpson. Who the hell are you?".
+>> Hallmarks of the character include his chalkboard gags and his catchphrases.
 
-At ten years old, Bart is the eldest child and only son of Homer and Marge, and the brother of Lisa and Maggie.
->> At ten years old, Bart is the child and son of Homer.
-
-In casting, Nancy Cartwright originally planned to audition for the role of Lisa, while Yeardley Smith tried out for Bart.
->> , Nancy Cartwright planned to audition for the role of Lisa.
+Nancy Cartwright has won several awards for voicing Bart, including a Primetime Emmy Award in 1992 and an Annie Award in 1995.
+>> Nancy Cartwright has won several awards for voicing Bart.
 ```
 
 <br/>
