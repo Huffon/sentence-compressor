@@ -77,6 +77,9 @@ python generate_bart.py
 Bartholomew JoJo Simpson is a fictional character in the American animated television series The Simpsons and part of the Simpson family.
 >> Bartholomew JoJo Simpson is a fictional character in the animated television series The Simpsons.
 
+While the rest of the characters were named after Groening's family members, Bart's name is an anagram of the word brat.
+>> Bart's name is an anagram of the word brat.
+
 Bart's most prominent and popular character traits are his mischievousness, rebelliousness and disrespect for authority.
 >> Bart 's character traits are his mischievousness, rebelliousness and disrespect.
 
@@ -92,6 +95,9 @@ Hallmarks of the character include his chalkboard gags in the opening sequence; 
 [Before & After]
 Bartholomew JoJo Simpson is a fictional character in the American animated television series The Simpsons and part of the Simpson family.
 >> Bartholomew JoJo Simpson is a fictional character in the American animated television series The Simpsons.
+
+While the rest of the characters were named after Groening's family members, Bart's name is an anagram of the word brat.
+>> Bart's name is an anagram of the word brat.
 
 Bart's most prominent and popular character traits are his mischievousness, rebelliousness and disrespect for authority.
 >> Bart's most prominent character traits are his mischievousness, rebelliousness and disrespect for authority.
