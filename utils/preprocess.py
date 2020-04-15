@@ -70,7 +70,7 @@ def preprocess_msr(source: List[str], target: List[str]):
     """Preprocess MSR parallel sentence compression dataset
     """
     msr = "Release/RawData"
-    datasets = ["train", "valid", "test"]
+    datasets = ["train"]
 
     for dataset in datasets:
         dataframe = pd.read_csv(os.path.join(msr, f"{dataset}.tsv"), delimiter='\t', header=None, error_bad_lines=False)
@@ -86,7 +86,22 @@ def preprocess_msr(source: List[str], target: List[str]):
 
     logging.info(f"Current dataset size: {len(source)}")
 
-    return source, target
+    valid_source, valid_target = list(), list()
+    datasets = ["valid", "test"]
+
+    for dataset in datasets:
+        dataframe = pd.read_csv(os.path.join(msr, f"{dataset}.tsv"), delimiter='\t', header=None, error_bad_lines=False)
+            
+        for item in dataframe[2].iteritems():
+            splitted = item[1].split("|||")
+
+            src, tgt = splitted[0], splitted[1]
+            tgt = tgt.split("\t")[0]
+
+            valid_source.append(src.strip())
+            valid_target.append(tgt.strip())
+
+    return (source, target), (valid_source, valid_target)
 
 
 def preprocess_gigaword():
@@ -141,27 +156,32 @@ def main():
     src, tgt = preprocess_google("train", prefix, nums)
 
     logging.info("[TRAIN] Edinburgh Dataset")
-    edin_dirs = ["annotator1", "annotator2", "annotator3", "written"]
+    edin_dirs = ["annotator1", "annotator2", "written"]
     src, tgt = preprocess_edin(edin_dirs, src, tgt)
 
     logging.info("[TRAIN] MSR Dataset")
-    src, tgt = preprocess_msr(src, tgt)
+    (src, tgt), (val_src, val_tgt) = preprocess_msr(src, tgt)
 
     # logging.info("[TRAIN] Gigaword Dataset")
     # giga_train, giga_val = preprocess_gigaword()
     # giga_src, giga_tgt = giga_train
     # src += giga_src
     # tgt += giga_tgt
-    logging.info(f"Current dataset size: {len(src)}")
     create_pair("train", src, tgt)
 
     logging.info("[VAL] Google Dataset")
     prefix = "data/comp-data.eval"
     nums = [""]
     src, tgt = preprocess_google("val", prefix, nums)
+    
+    logging.info("[VAL] Edinburgh Dataset")
+    edin_dirs = ["annotator3"]
+    src, tgt = preprocess_edin(edin_dirs, src, tgt)
     # giga_src, giga_tgt = giga_val
     # src += giga_src
     # tgt += giga_tgt
+    src += val_src
+    tgt += val_tgt
     create_pair("val", src, tgt)
 
 
