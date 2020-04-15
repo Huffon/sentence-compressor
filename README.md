@@ -62,6 +62,8 @@ bash train_bart.sh
 python generate_bart.py
 ```
 
+*You can get fine-tuned BART's checkpoint [**here**](https://drive.google.com/open?id=19C9zKJXq3vGZZ-9s-zi4Vi1ytWBzo_a_)*
+
 <br/>
 
 ## Example
